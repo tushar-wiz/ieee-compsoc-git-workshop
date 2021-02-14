@@ -17,7 +17,7 @@ Its simple. You can either fork or clone a repository. A *fork* of the project i
 
 For now, let's clone this repository
 
-    $ git clone https://github.com/kuahyeow/git-workshop.git
+    $ git clone https://github.com/chandrashritii/ieee-compsoc-git-workshop.git
 
 Once you have cloned your repository, you should now see a directory
 called `ieee-compsoc-git-workshop`. You now have your very own copy of the rpository. The techies call this the `working directory`. Let's make our way into the repository on our terminal.
