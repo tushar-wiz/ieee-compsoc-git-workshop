@@ -22,7 +22,7 @@ For now, let's clone this repository
 Once you have cloned your repository, you should now see a directory
 called `ieee-compsoc-git-workshop`. You now have your very own copy of the rpository. The techies call this the `working directory`. Let's make our way into the repository on our terminal.
 
-    $ cd git-workshop
+    $ cd ieee-composoc-git-workshop
     $ ls
 
 
