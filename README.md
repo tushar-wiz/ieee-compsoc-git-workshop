@@ -67,4 +67,11 @@ You will see :
 - Steps
 - Recursive Merging
 - Merge Conflicts (The soon to be bane of your existence)
-- Fixing Conflicts
+
+# Cracking the whip
+
+Here comes the tough stuff
+
+- Fixing Merge Conflicts
+- Rebasing
+- Cherry Picking
