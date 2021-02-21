@@ -41,37 +41,132 @@ You will see :
 
 ## 1. Creating Files
 
+We'll be creating files now. 
+
+    $ nano file.md
+
+Git provides you with a staging area. Adding files and data to the staging area is easy. Run :
+
+    $ git add file.md
+
 ## 2. Committing Files
 
 - Commit Messages
-- Resetting your commit messages (We all make mistakes)
+
+        $ git commit -m "your commit message"
+
 - Signing off on your commits
+
+        $ git commit -s -m "your commit message"
+
+- Resetting your commit messages (We all make mistakes)
+
+        $ git commit --amend
+
+Forgot to signoff on your commit?
+
+        $ git commit --amend -s
 
 ## 3. What did you just do?
 
 - Checking git logs
 
+You just made a commit. But what really happened behind the curtain?
 
-# Rewind
+To see all your commits, run :
+
+    $ git log
+
+Git log lists an index of all the commits, inclusive of the following details :
+
+* Name of the Author
+* Commit Date
+* Commit SHA Number
+* Commit Message
+
+Want more details?
+
+    $ git show
+
+# Let's Rewind
 
 - Refactoring and Fixing your bloopers
 
-- Why would you need to reset a commit?
+Mistakes are human and so is the ability to correct them. This is where its gets interesting. 
 
-- How to go back to a particular state? [Better than time travelling ;)]
+Let's open file.md and add some more content.
+
+Now, let's see what we changed. Run :
+
+    $ git diff
+
+QnA: Why would you need to reset a commit?
 
 # Working with branches
+
+Creating a branch is easy. First, let's list all the current (live) branches. Run :
+
+    $ git branch -a
+
+The * against the branch name should indicate the current branch you are on, which at the moment should be main.
+
+Let's create and switch to another branch.
+
+    $ git checkout -b shriti
+
+Now, let's add some content to the branch - 'shriti' and the run a diff to compare our changes with the main branch. Run :
+
+    $ git diff main
 
 # Let's merge
 
 - Steps
+
+       $ git checkout main
+
+       $ git merge shriti
+
+ You should now see a similar output :
+
+    Merge made by recursive.
+    file.md |    1 +
+    1 files changed, 6 insertions(+), 0 deletions(-)
+    create mode 100644 test.txt
+
 - Recursive Merging
 - Merge Conflicts (The soon to be bane of your existence)
+    
+    * Why do they happen?
+    * Fixing Merge conflicts
 
 # Cracking the whip
 
-Here comes the tough stuff
 
-- Fixing Merge Conflicts
-- Rebasing
+- How to go back to a particular state? [Better than time travelling ;)]
+
+What happens if we don't like the content we've added to a commit? How do you retrace your steps?
+
+We land on two scenarios here. 
+
+1. The file is still in the staging area 
+
+        $ git reset HEAD file.md
+
+The output should look like :
+
+        Unstaged changes after reset:
+
+        M   file.md
+
+2. The file has already been commited
+
+     Here comes the tough stuff
+
+- Rebasing (Interactive Mode)
+
+        $ git rebase -i HEAD~6
+
 - Cherry Picking
+
+        $ git cherry-pick <commit-hash>
+        $ git cherry-pick -x <commit-hash>
